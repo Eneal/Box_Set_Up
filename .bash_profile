@@ -17,8 +17,8 @@ export PS1
 
 # alias stuff
 
-alias .. = 'cd ..'
-alias lsa = 'ls -latr'
+alias ..='cd ..'
+alias lsa='ls -latr'
 alias commit='git commit -m'
 alias status='git status'
 alias push='git push'
