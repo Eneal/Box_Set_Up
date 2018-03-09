@@ -1,3 +1,10 @@
+echo "Let's get installin' up in this bitch!"
+
+# copy .zshrc and .vimrc into ~
+cp .zshrc ~ .zshrc
+cp .vimrc ~ .vimrc
+echo "moved .zshrc and .vimrc into ~"
+
 # move up a directory
 cd ~
 echo "changed to home directory"
@@ -35,6 +42,10 @@ cd fonts
 cd ..
 rm -rf fonts
 
+# vim stuff
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+echo "Vundle vim plugin manager cloned"
+
 # python 2
 brew install python
 python $HERE/get_pip.py
@@ -48,7 +59,7 @@ echo "python 3 installed"
 
 # virtualenv and virtualenvwrapper
 pip install virtualenv
-pip install virtualenvwrapper
+pip install --ignore-installed virtualenvwrapper
 
 mkvirtualenv p2_default
 deactivate
@@ -69,4 +80,4 @@ brew cask install suspicious-package
 # turn it all on
 source ~/.zshrc
 
-echo "Don't forget to set your iTerm2 fonts to 14pt Meslo for Powerline. Preferences>Profies>Text"
+echo "Don't forget to set your iTerm2 fonts to 14pt Meslo for Powerline. Preferences>Profiles>Text"
