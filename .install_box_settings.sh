@@ -1,9 +1,9 @@
 echo "Let's get installin' up in this bitch!"
 
 # copy .zshrc and .vimrc into ~
-cp .zshrc ~ .zshrc
+#cp .zshrc ~ .zshrc
 cp .vimrc ~ .vimrc
-echo "moved .zshrc and .vimrc into ~"
+#echo "moved .zshrc and .vimrc into ~"
 
 # move up a directory
 cd ~
@@ -46,25 +46,32 @@ rm -rf fonts
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 echo "Vundle vim plugin manager cloned"
 
+# pyenv setup
+brew install pyenv
+echo "pyenv installed"
+echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.zshrc
+echo "pyenv init added to .zshrc"
+
+
 # python 2
-brew install python
-python $HERE/get_pip.py
-pip install --upgrade setuptools
-pip install -upgrade pip
-echo "python 2 and pip installed"
+#brew install python
+#python $HERE/get_pip.py
+#pip install --upgrade setuptools
+#pip install -upgrade pip
+#echo "python 2 and pip installed"
 
 # python 3
-brew install python3
-echo "python 3 installed"
+#brew install python3
+#echo "python 3 installed"
 
 # virtualenv and virtualenvwrapper
 pip install virtualenv
 pip install --ignore-installed virtualenvwrapper
 
-mkvirtualenv p2_default
-deactivate
-mkvirtualenv --python="/usr/local/bin/python3" p3_default
-deactivate
+#mkvirtualenv p2_default
+#deactivate
+#mkvirtualenv --python="/usr/local/bin/python3" p3_default
+#deactivate
 
 # Nice Quick Look extensions
 brew cask install qlcolorcode
@@ -79,5 +86,12 @@ brew cask install suspicious-package
 
 # turn it all on
 source ~/.zshrc
+
+
+# pyenv install of python versions
+pyenv install 2.7.14
+echo "python 2.7.14 installed via pyenv"
+pyenv install 3.6.5
+echo "python 3.6.6 installed via pyenv"
 
 echo "Don't forget to set your iTerm2 fonts to 14pt Meslo for Powerline. Preferences>Profiles>Text"
