@@ -1,1 +1,3 @@
 https://wiki.gentoo.org/wiki/Zsh/Guide#Prompts
+
+use 'agnoster'
