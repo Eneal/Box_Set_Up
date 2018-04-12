@@ -49,7 +49,8 @@ echo "Vundle vim plugin manager cloned"
 # pyenv setup
 brew install pyenv
 echo "pyenv installed"
-echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.zshrc
+brew install pyenv-virtualenv
+echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\n  eval "$(pyenv virtualenv-init -)"\n fi' >> ~/.zshrc
 echo "pyenv init added to .zshrc"
 
 
